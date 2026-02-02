@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   await loadData();
+  populateDropdowns();
   initMap();
 
   document.getElementById("searchBtn").addEventListener("click", () => {
@@ -27,8 +28,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.getElementById("resetBtn").addEventListener("click", () => {
     clearRoutes();
-    document.getElementById("originInput").value = "";
-    document.getElementById("destinationInput").value = "";
-    document.getElementById("airlineInput").value = "";
+    document.getElementById("originSelect").value = "";
+    document.getElementById("destinationSelect").value = "";
+    document.getElementById("airlineSelect").value = "";
   });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  populateDropdowns();
+  drawRoutes(routes);
+
+  // 🔥 初期件数表示
+  updateRouteCount(routes);
 });

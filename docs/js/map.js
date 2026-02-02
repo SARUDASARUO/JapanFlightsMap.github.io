@@ -13,6 +13,8 @@ function initMap() {
 
   routeLayerGroup = L.layerGroup().addTo(map);
   airportLayerGroup = L.layerGroup().addTo(map);
+  airportLayerGroup.setZIndex(1000);
+  routeLayerGroup.setZIndex(500);
 }
 
 function clearRoutes() {
@@ -84,6 +86,7 @@ function drawAirportMarker(airport) {
   marker.on("mouseout", () => resetRouteStyles());
 
   marker.addTo(airportLayerGroup);
+  marker.bringToFront();
 }
 
 function highlightRoutes(iata) {

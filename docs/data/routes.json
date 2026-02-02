@@ -1,32 +1,32 @@
 [
-  {
-    "origin": "CTS",
-    "destination": "HND",
-    "airlines": ["JL", "NH", "HD"]
-  },
-  {
-    "origin": "FUK",
-    "destination": "HND",
-    "airlines": ["JL", "NH", "MM"]
-  },
-  {
-    "origin": "HND",
-    "destination": "OKA",
-    "airlines": ["JL", "NH", "GK", "MM"]
-  },
-  {
-    "origin": "ITM",
-    "destination": "HND",
-    "airlines": ["JL", "NH"]
-  },
-  {
-    "origin": "KIX",
-    "destination": "OKA",
-    "airlines": ["MM", "GK"]
-  },
-  {
-    "origin": "CTS",
-    "destination": "FUK",
-    "airlines": ["JL"]
-  }
+  { "origin": "HND", "destination": "CTS", "airlines": ["NH", "JL", "BC"] },
+  { "origin": "HND", "destination": "FUK", "airlines": ["NH", "JL", "BC", "7G"] },
+  { "origin": "HND", "destination": "OKA", "airlines": ["NH", "JL", "6J"] },
+  { "origin": "HND", "destination": "ITM", "airlines": ["NH", "JL"] },
+  { "origin": "HND", "destination": "KOJ", "airlines": ["NH", "6J"] },
+  { "origin": "HND", "destination": "HIJ", "airlines": ["NH", "JL"] },
+  { "origin": "HND", "destination": "NGS", "airlines": ["NH"] },
+
+  { "origin": "NRT", "destination": "CTS", "airlines": ["GK", "NH"] },
+  { "origin": "NRT", "destination": "FUK", "airlines": ["GK"] },
+  { "origin": "NRT", "destination": "OKA", "airlines": ["GK"] },
+
+  { "origin": "ITM", "destination": "CTS", "airlines": ["JL"] },
+  { "origin": "ITM", "destination": "FUK", "airlines": ["NH", "JL"] },
+  { "origin": "ITM", "destination": "SDJ", "airlines": ["JL"] },
+
+  { "origin": "KIX", "destination": "CTS", "airlines": ["MM"] },
+  { "origin": "KIX", "destination": "FUK", "airlines": ["MM"] },
+  { "origin": "KIX", "destination": "OKA", "airlines": ["MM"] },
+  { "origin": "KIX", "destination": "NGO", "airlines": ["NH"] },
+
+  { "origin": "NGO", "destination": "CTS", "airlines": ["NH"] },
+  { "origin": "NGO", "destination": "FUK", "airlines": ["NH"] },
+
+  { "origin": "FUK", "destination": "OKA", "airlines": ["NH", "JL"] },
+  { "origin": "FUK", "destination": "KMI", "airlines": ["NH", "EH"] },
+
+  { "origin": "CTS", "destination": "SDJ", "airlines": ["NH"] },
+
+  { "origin": "KOJ", "destination": "OKA", "airlines": ["6J"] }
 ]

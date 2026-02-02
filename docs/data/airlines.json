@@ -1,27 +1,10 @@
 [
-  {
-    "iata": "JL",
-    "name": "Japan Airlines",
-    "type": "FSC"
-  },
-  {
-    "iata": "NH",
-    "name": "All Nippon Airways",
-    "type": "FSC"
-  },
-  {
-    "iata": "HD",
-    "name": "Air Do",
-    "type": "FSC"
-  },
-  {
-    "iata": "GK",
-    "name": "Jetstar Japan",
-    "type": "LCC"
-  },
-  {
-    "iata": "MM",
-    "name": "Peach Aviation",
-    "type": "LCC"
-  }
+  { "iata": "NH", "name": "ANA", "type": "FSC" },
+  { "iata": "JL", "name": "JAL", "type": "FSC" },
+  { "iata": "GK", "name": "ジェットスター・ジャパン", "type": "LCC" },
+  { "iata": "MM", "name": "Peach", "type": "LCC" },
+  { "iata": "BC", "name": "スカイマーク", "type": "Hybrid" },
+  { "iata": "6J", "name": "ソラシドエア", "type": "Regional" },
+  { "iata": "7G", "name": "スターフライヤー", "type": "Hybrid" },
+  { "iata": "EH", "name": "ANAウイングス", "type": "Regional" }
 ]

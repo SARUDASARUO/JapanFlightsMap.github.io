@@ -1,44 +1,15 @@
 [
-  {
-    "iata": "HND",
-    "name": "Tokyo Haneda",
-    "city": "Tokyo",
-    "lat": 35.5494,
-    "lng": 139.7798
-  },
-  {
-    "iata": "CTS",
-    "name": "New Chitose",
-    "city": "Sapporo",
-    "lat": 42.7752,
-    "lng": 141.6923
-  },
-  {
-    "iata": "FUK",
-    "name": "Fukuoka",
-    "city": "Fukuoka",
-    "lat": 33.5859,
-    "lng": 130.4507
-  },
-  {
-    "iata": "OKA",
-    "name": "Naha",
-    "city": "Okinawa",
-    "lat": 26.1958,
-    "lng": 127.6469
-  },
-  {
-    "iata": "ITM",
-    "name": "Osaka Itami",
-    "city": "Osaka",
-    "lat": 34.7855,
-    "lng": 135.4382
-  },
-  {
-    "iata": "KIX",
-    "name": "Kansai International",
-    "city": "Osaka",
-    "lat": 34.4347,
-    "lng": 135.2440
-  }
+  { "iata": "HND", "city": "東京（羽田）", "lat": 35.5494, "lng": 139.7798, "region": "関東" },
+  { "iata": "NRT", "city": "東京（成田）", "lat": 35.7720, "lng": 140.3929, "region": "関東" },
+  { "iata": "ITM", "city": "大阪（伊丹）", "lat": 34.7855, "lng": 135.4382, "region": "関西" },
+  { "iata": "KIX", "city": "関西国際空港", "lat": 34.4347, "lng": 135.2440, "region": "関西" },
+  { "iata": "CTS", "city": "札幌（新千歳）", "lat": 42.7752, "lng": 141.6923, "region": "北海道" },
+  { "iata": "FUK", "city": "福岡空港", "lat": 33.5859, "lng": 130.4510, "region": "九州" },
+  { "iata": "OKA", "city": "那覇空港", "lat": 26.1958, "lng": 127.6466, "region": "沖縄" },
+  { "iata": "NGO", "city": "名古屋（中部）", "lat": 34.8584, "lng": 136.8054, "region": "中部" },
+  { "iata": "SDJ", "city": "仙台空港", "lat": 38.1397, "lng": 140.9169, "region": "東北" },
+  { "iata": "KOJ", "city": "鹿児島空港", "lat": 31.8034, "lng": 130.7186, "region": "九州" },
+  { "iata": "HIJ", "city": "広島空港", "lat": 34.4361, "lng": 132.9194, "region": "中国" },
+  { "iata": "KMI", "city": "宮崎空港", "lat": 31.8772, "lng": 131.4486, "region": "九州" },
+  { "iata": "NGS", "city": "長崎空港", "lat": 32.9169, "lng": 129.9136, "region": "九州" }
 ]
