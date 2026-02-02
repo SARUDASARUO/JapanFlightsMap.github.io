@@ -17,34 +17,33 @@
 
   <header>
     <h1>Japan Domestic Flight Map</h1>
+
     <div class="search-bar">
 
-    <select id="originSelect">
-      <option value="">出発空港</option>
-    </select>
+      <select id="originSelect">
+        <option value="">出発空港</option>
+      </select>
 
-    <select id="destinationSelect">
-      <option value="">到着空港</option>
-    </select>
+      <select id="destinationSelect">
+        <option value="">到着空港</option>
+      </select>
 
-    <select id="airlineSelect">
-      <option value="">航空会社</option>
-    </select>
+      <select id="airlineSelect">
+        <option value="">航空会社</option>
+      </select>
 
-      <!-- <input type="text" id="originInput" placeholder="出発空港 (例: HND)" />
-      <input type="text" id="destinationInput" placeholder="到着空港 (例: CTS)" />
-      <input type="text" id="airlineInput" placeholder="航空会社 (例: JL)" /> -->
       <button id="searchBtn">検索</button>
       <button id="resetBtn">リセット</button>
+
     </div>
 
     <div id="route-count" class="route-count">
       該当路線数：0件
     </div>
-    
+
   </header>
 
-  <div id="map"></div>
+  <div id="map" style="height: 80vh;"></div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -52,7 +51,6 @@
   <script src="js/dataLoader.js"></script>
   <script src="js/map.js"></script>
   <script src="js/search.js"></script>
-  <script src="js/main.js"></script>
 
 </body>
 </html>

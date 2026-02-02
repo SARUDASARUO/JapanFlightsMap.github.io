@@ -1,49 +1,5 @@
-document.addEventListener("DOMContentLoaded", async () => {
-
-  await loadData();
-  populateDropdowns();
-  initMap();
-  drawRoutes(routes);
-  updateRouteCount(routes);
-
-  // 🔍 検索ボタン
-  document.getElementById("searchBtn").addEventListener("click", () => {
-
-    clearRoutes();
-
-    const origin =
-      document.getElementById("originSelect").value;
-
-    const destination =
-      document.getElementById("destinationSelect").value;
-
-    const airline =
-      document.getElementById("airlineSelect").value;
-
-    const results = filterRoutes(origin, destination, airline);
-
-    results.forEach(drawRoute);
-
-    updateRouteCount(results);
-  });
-
-  // 🔄 リセット
-  document.getElementById("resetBtn").addEventListener("click", () => {
-
-    clearRoutes();
-
-    document.getElementById("originSelect").value = "";
-    document.getElementById("destinationSelect").value = "";
-    document.getElementById("airlineSelect").value = "";
-
-    drawRoutes(routes);
-    updateRouteCount(routes);
-  });
-});
-
-
-
 function filterRoutes(origin, destination, airline) {
+
   return routes.filter(route => {
 
     const matchOrigin =
@@ -62,9 +18,8 @@ function filterRoutes(origin, destination, airline) {
 
     return matchOrigin && matchDestination && matchAirline;
   });
+
 }
-
-
 
 function populateDropdowns() {
 
@@ -74,37 +29,61 @@ function populateDropdowns() {
 
   airports.forEach(airport => {
 
-    const option1 = new Option(
-      `${airport.iata} - ${airport.name}`,  // 日本語名
-      airport.iata
+    originSelect.add(
+      new Option(`${airport.iata} - ${airport.name}`, airport.iata)
     );
 
-    const option2 = new Option(
-      `${airport.iata} - ${airport.name}`,
-      airport.iata
+    destinationSelect.add(
+      new Option(`${airport.iata} - ${airport.name}`, airport.iata)
     );
 
-    originSelect.add(option1);
-    destinationSelect.add(option2);
   });
 
   airlines.forEach(airline => {
 
-    const option = new Option(
-      `${airline.iata} - ${airline.name}`,
-      airline.iata
+    airlineSelect.add(
+      new Option(`${airline.iata} - ${airline.name}`, airline.iata)
     );
 
-    airlineSelect.add(option);
   });
+
 }
-
-
 
 function updateRouteCount(routeArray) {
-  const countElement =
-    document.getElementById("route-count");
-
-  countElement.textContent =
-    `該当路線数：${routeArray.length}件`;
+  const countElement = document.getElementById("route-count");
+  countElement.textContent = `該当路線数：${routeArray.length}件`;
 }
+
+document.addEventListener("DOMContentLoaded", async function () {
+
+  await loadData();
+
+  initMap();
+  populateDropdowns();
+
+  drawRoutes(routes);
+  updateRouteCount(routes);
+
+  document.getElementById("searchBtn").addEventListener("click", function () {
+
+    const origin = document.getElementById("originSelect").value;
+    const destination = document.getElementById("destinationSelect").value;
+    const airline = document.getElementById("airlineSelect").value;
+
+    const results = filterRoutes(origin, destination, airline);
+
+    drawRoutes(results);
+    updateRouteCount(results);
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", function () {
+
+    document.getElementById("originSelect").value = "";
+    document.getElementById("destinationSelect").value = "";
+    document.getElementById("airlineSelect").value = "";
+
+    drawRoutes(routes);
+    updateRouteCount(routes);
+  });
+
+});
