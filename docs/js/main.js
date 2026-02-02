@@ -34,10 +34,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+
+  await loadData();
+  initMap();
   populateDropdowns();
   drawRoutes(routes);
 
-  // 🔥 初期件数表示
+  // 初期件数表示
   updateRouteCount(routes);
 });
