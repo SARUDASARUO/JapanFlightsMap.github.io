@@ -83,7 +83,7 @@ function drawAirportMarker(airport) {
   marker.options.iata = airport.iata;
 
   marker.bindPopup(`
-    <strong>${airport.name}</strong><br/>
+    <strong>${airport.city}</strong><br/>
     (${airport.iata})
   `);
 
