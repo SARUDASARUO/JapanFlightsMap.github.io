@@ -1,52 +1,34 @@
-function filterRoutes(origin, destination, airline) {
-
+function filterRoutesByAirport(airport, airline) {
   return routes.filter(route => {
 
-    const matchOrigin =
-      !origin ||
-      route.origin === origin ||
-      route.destination === origin;
-
-    const matchDestination =
-      !destination ||
-      route.origin === destination ||
-      route.destination === destination;
+    const matchAirport =
+      !airport ||
+      route.origin === airport ||
+      route.destination === airport;
 
     const matchAirline =
       !airline ||
       route.airlines.includes(airline);
 
-    return matchOrigin && matchDestination && matchAirline;
+    return matchAirport && matchAirline;
   });
-
 }
 
 function populateDropdowns() {
-
-  const originSelect = document.getElementById("originSelect");
-  const destinationSelect = document.getElementById("destinationSelect");
+  const airportSelect = document.getElementById("airportSelect");
   const airlineSelect = document.getElementById("airlineSelect");
 
   airports.forEach(airport => {
-
-    originSelect.add(
+    airportSelect.add(
       new Option(`${airport.iata} - ${airport.city}`, airport.iata)
     );
-
-    destinationSelect.add(
-      new Option(`${airport.iata} - ${airport.city}`, airport.iata)
-    );
-
   });
 
   airlines.forEach(airline => {
-
     airlineSelect.add(
       new Option(`${airline.iata} - ${airline.name}`, airline.iata)
     );
-
   });
-
 }
 
 function updateRouteCount(routeArray) {
@@ -61,25 +43,26 @@ document.addEventListener("DOMContentLoaded", async function () {
   initMap();
   populateDropdowns();
 
+  // 初期は全路線
   drawRoutes(routes);
   updateRouteCount(routes);
 
+  // 検索
   document.getElementById("searchBtn").addEventListener("click", function () {
 
-    const origin = document.getElementById("originSelect").value;
-    const destination = document.getElementById("destinationSelect").value;
+    const airport = document.getElementById("airportSelect").value;
     const airline = document.getElementById("airlineSelect").value;
 
-    const results = filterRoutes(origin, destination, airline);
+    const results = filterRoutesByAirport(airport, airline);
 
     drawRoutes(results);
     updateRouteCount(results);
   });
 
+  // リセット
   document.getElementById("resetBtn").addEventListener("click", function () {
 
-    document.getElementById("originSelect").value = "";
-    document.getElementById("destinationSelect").value = "";
+    document.getElementById("airportSelect").value = "";
     document.getElementById("airlineSelect").value = "";
 
     drawRoutes(routes);
