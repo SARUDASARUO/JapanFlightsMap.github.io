@@ -24,7 +24,20 @@ function filterRoutesByAirport(airport, airline) {
 function populateDropdowns() {
   const airlineSelect = document.getElementById("airlineSelect");
 
-  airlines.forEach(airline => {
+  const preferredAirlines = ["JL", "NH"];
+  const preferredIndex = new Map(preferredAirlines.map((code, index) => [code, index]));
+
+  const visibleAirlines = airlines.filter(a => a.iata && !a.hidden);
+  visibleAirlines.sort((a, b) => {
+    const aPref = preferredIndex.has(a.iata);
+    const bPref = preferredIndex.has(b.iata);
+    if (aPref && bPref) return preferredIndex.get(a.iata) - preferredIndex.get(b.iata);
+    if (aPref) return -1;
+    if (bPref) return 1;
+    return (a.name || "").localeCompare(b.name || "", "ja");
+  });
+
+  visibleAirlines.forEach(airline => {
     if (!airline.iata || airline.hidden) return;
     airlineSelect.add(
       new Option(`${airline.iata} - ${airline.name}`, airline.iata)

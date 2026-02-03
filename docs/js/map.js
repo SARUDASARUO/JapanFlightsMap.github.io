@@ -83,7 +83,19 @@ function drawRoute(route) {
   const originName = getAirportDisplayName(originAirport);
   const destName = getAirportDisplayName(destAirport);
 
-  const airlineNames = route.airlines.map(code => {
+  const preferredAirlines = ["JL", "NH"];
+  const preferredIndex = new Map(preferredAirlines.map((code, index) => [code, index]));
+
+  const sortedAirlines = [...route.airlines].sort((a, b) => {
+    const aPref = preferredIndex.has(a);
+    const bPref = preferredIndex.has(b);
+    if (aPref && bPref) return preferredIndex.get(a) - preferredIndex.get(b);
+    if (aPref) return -1;
+    if (bPref) return 1;
+    return a.localeCompare(b);
+  });
+
+  const airlineNames = sortedAirlines.map(code => {
     const airline = airlines.find(a => a.iata === code);
     return airline ? airline.name : code;
   });
