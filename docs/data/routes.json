@@ -183,7 +183,7 @@
   { "origin": "NKM", "destination": "KMJ", "airlines": ["JH"] },
   { "origin": "NKM", "destination": "OKD", "airlines": ["JH"] },
   { "origin": "NRT", "destination": "ASJ", "airlines": ["MM"] },
-  { "origin": "NRT", "destination": "CTS", "airlines": ["MM", "NH"] },
+  { "origin": "NRT", "destination": "CTS", "airlines": ["MM", "NH", "IJ"] },
   { "origin": "NRT", "destination": "FUK", "airlines": ["MM"] },
   { "origin": "NRT", "destination": "ISG", "airlines": ["MM"] },
   { "origin": "NRT", "destination": "ITM", "airlines": ["JL", "NH"] },
