@@ -13,7 +13,6 @@
   { "iata": "OC", "name": "オリエンタルエアブリッジ", "type": "Regional" },
   { "iata": "MZ", "name": "天草エアライン", "type": "Regional" },
   { "iata": "BV", "name": "トキエア", "type": "LCC" },
-  { "iata": "EH", "name": "ANA", "type": "Regional", "hidden": true },
   { "iata": null, "name": "新中央航空", "type": "Regional", "hidden": true },
   { "iata": null, "name": "第一航空", "type": "Regional", "hidden": true }
 ]
