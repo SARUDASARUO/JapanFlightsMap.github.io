@@ -6,9 +6,16 @@ function filterRoutesByAirport(airport, airline) {
       route.origin === airport ||
       route.destination === airport;
 
+    const normalizeAirline = (code) => {
+      if (code === "EH") return "NH";
+      return code;
+    };
+
+    const normalizedAirlines = route.airlines.map(normalizeAirline);
+
     const matchAirline =
       !airline ||
-      route.airlines.includes(airline);
+      normalizedAirlines.includes(airline);
 
     return matchAirport && matchAirline;
   });
@@ -18,6 +25,7 @@ function populateDropdowns() {
   const airlineSelect = document.getElementById("airlineSelect");
 
   airlines.forEach(airline => {
+    if (!airline.iata || airline.hidden) return;
     airlineSelect.add(
       new Option(`${airline.iata} - ${airline.name}`, airline.iata)
     );
