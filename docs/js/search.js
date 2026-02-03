@@ -30,11 +30,11 @@ function populateDropdowns() {
   airports.forEach(airport => {
 
     originSelect.add(
-      new Option(`${airport.iata} - ${airport.name}`, airport.iata)
+      new Option(`${airport.iata} - ${airport.city}`, airport.iata)
     );
 
     destinationSelect.add(
-      new Option(`${airport.iata} - ${airport.name}`, airport.iata)
+      new Option(`${airport.iata} - ${airport.city}`, airport.iata)
     );
 
   });
