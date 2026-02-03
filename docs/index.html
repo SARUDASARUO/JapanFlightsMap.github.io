@@ -5,12 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Japan Domestic Flight Map</title>
 
-  <!-- Leaflet CSS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet/dist/leaflet.css"
-  />
-
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -20,12 +15,8 @@
 
     <div class="search-bar">
 
-      <select id="originSelect">
-        <option value="">出発空港</option>
-      </select>
-
-      <select id="destinationSelect">
-        <option value="">到着空港</option>
+      <select id="airportSelect">
+        <option value="">空港を選択</option>
       </select>
 
       <select id="airlineSelect">
@@ -40,17 +31,14 @@
     <div id="route-count" class="route-count">
       該当路線数：0件
     </div>
-
   </header>
 
   <div id="map" style="height: 80vh;"></div>
 
-  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
   <script src="js/dataLoader.js"></script>
   <script src="js/map.js"></script>
   <script src="js/search.js"></script>
-
 </body>
 </html>
