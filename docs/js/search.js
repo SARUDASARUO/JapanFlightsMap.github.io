@@ -194,9 +194,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   populateDropdowns();
   setupAirportPicker();
 
-  // 初期は全路線
-  drawRoutes(routes);
-  updateRouteCount(routes);
+  // 初期は非表示
+  drawRoutes([]);
+  updateRouteCount([]);
 
   // 検索
   document.getElementById("searchBtn").addEventListener("click", function () {
